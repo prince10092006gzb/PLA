@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Learning Academy - Christmas Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap');
+        
+        :root {
+            --primary-gold: #FFD700;
+            --primary-red: #DC143C;
+            --secondary-blue: #00CED1;
+            --accent-purple: #FF1493;
+            --christmas-green: #228B22;
+            --xmas-red: #FF0000;
+            --snow: #F0FFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a3d2a 0%, #1a5a3a 25%, #2d8a5a 50%, #4a4e8c 75%, #8b0000 100%);
+            background-size: 400% 400%;
+            background-attachment: fixed;
+            animation: galaxyShift 20s ease infinite;
+            color: #fff;
+            position: relative;
+            padding-top: 70px;
+        }
+        
+        @keyframes galaxyShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, var(--primary-gold) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+            opacity: 0.1;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) rotate(360deg) scale(1.2); opacity: 0; }
+        }
+        
+        .snowflake {
+            position: fixed;
+            color: var(--snow);
+            font-size: 1.5rem;
+            pointer-events: none;
+            z-index: 0;
+            text-shadow: 0 0 10px var(--secondary-blue);
+            animation: snowfall linear infinite;
+        }
+        
+        @keyframes snowfall {
+            0% { transform: translateY(-10vh) translateX(0); opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) translateX(100px); opacity: 0; }
+        }
+        
+        @keyframes jingle {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(10px) rotate(5deg); }
+            75% { transform: translateX(-10px) rotate(-5deg); }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.5; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, var(--christmas-green) 0%, var(--primary-red) 50%, var(--primary-gold) 100%);
+            z-index: 100;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            padding: 0.75rem 1rem;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        
+        .logo-section img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+        
+        .nav-brand {
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            background: linear-gradient(45deg, var(--primary-gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .portal-btn {
+            background: linear-gradient(135deg, var(--primary-red), var(--accent-purple));
+            color: #fff !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 25px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.4);
+        }
+        
+        .portal-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(220, 20, 60, 0.6);
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-gold), var(--secondary-blue));
+            color: #0a3d2a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease-out;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+        }
+        
+        @keyframes slideInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .hero-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            background: linear-gradient(45deg, #fff, var(--primary-gold), var(--secondary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 4s ease infinite, heroGlow 6s ease-in-out infinite alternate;
+            margin: 0.5rem 0;
+            line-height: 1.2;
+            text-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+        }
+        
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes heroGlow {
+            0% { filter: drop-shadow(0 0 30px var(--primary-gold)); }
+            100% { filter: drop-shadow(0 0 60px var(--secondary-blue)); }
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            margin: 1rem 0;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .hero-motto {
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            font-family: 'Playfair Display', serif;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 1.25rem 1.75rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            margin: 1.5rem 0 2rem;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .cta-btn {
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-primary {
+            background: linear-gradient(135deg, var(--primary-red), var(--accent-purple));
+            color: #fff;
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.5);
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(220, 20, 60, 0.7);
+        }
+        
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+        }
+        
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .section {
+            padding: 4rem 1.5rem;
+            position: relative;
+            border-top: 3px dashed var(--primary-gold);
+        }
+        
+        .section::before, .section::after {
+            content: '🎄';
+            position: absolute;
+            font-size: 2rem;
+            top: -1.5rem;
+            z-index: 2;
+        }
+        
+        .section::before { left: 5%; }
+        .section::after { right: 5%; }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.8rem, 6vw, 3rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, var(--primary-gold), var(--secondary-blue), var(--primary-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientFlow 4s ease infinite;
+            letter-spacing: 2px;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .program-card {
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.15), rgba(255, 20, 147, 0.15));
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 3px solid var(--primary-gold);
+            text-align: center;
+            transition: all 0.5s ease;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+        }
+        
+        .program-card h3 {
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            color: #fff;
+            font-weight: 800;
+        }
+        
+        .program-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .portal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        
+        .portal-overlay.active {
+            display: flex;
+        }
+        
+        .portal-container {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(30px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .portal-close {
+            position: fixed;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            z-index: 1001;
+        }
+        
+        .portal-close:hover {
+            color: var(--primary-gold);
+            transform: rotate(90deg) scale(1.1);
+        }
+        
+        .portal-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, var(--primary-gold), #fff, var(--secondary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .portal-subtitle {
+            font-size: 0.95rem;
+            text-align: center;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            color: #fff;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 0.95rem;
+            background: linear-gradient(135deg, var(--primary-gold), #FFED4E);
+            color: #0a3d2a;
+            border: none;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.7);
+        }
+        
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .dashboard-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dashboard-card h3 {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+            color: #fff;
+        }
+        
+        .student-profile {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(0, 206, 209, 0.2));
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--primary-gold);
+            text-align: center;
+        }
+        
+        .student-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+        
+        .profile-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.75rem;
+            border-radius: 10px;
+        }
+        
+        .fee-table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .fee-table th {
+            background: linear-gradient(90deg, var(--primary-red), var(--accent-purple));
+            color: #fff;
+            padding: 1rem 0.75rem;
+            text-align: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        
+        .fee-table td {
+            padding: 1rem 0.75rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+        }
+        
+        .fee-table tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+        
+        .status-paid {
+            background: linear-gradient(135deg, #00C851, #00E676);
+            color: #fff;
+        }
+        
+        .status-due {
+            background: linear-gradient(135deg, #FF9500, #FFD700);
+            color: #0a3d2a;
+        }
+        
+        .payment-portal {
+            background: linear-gradient(135deg, #00C851 0%, var(--secondary-blue) 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 1.5rem 0;
+            display: none;
+        }
+        
+        .payment-portal.active {
+            display: block;
+        }
+        
+        .total-amount {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--primary-gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+        
+        .upi-id {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            word-break: break-all;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        .payment-btn {
+            background: linear-gradient(135deg, var(--primary-gold), #FFED4E);
+            color: #0a3d2a;
+            padding: 0.85rem 2rem;
+            border: none;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        }
+        
+        .payment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.7);
+        }
+        
+        .report-card {
+            background: linear-gradient(135deg, rgba(15, 15, 35, 0.95), rgba(26, 26, 62, 0.98));
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .report-header {
+            background: linear-gradient(90deg, #0a3d2a, #2d5a4a);
+            padding: 1.5rem;
+        }
+        
+        .report-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .report-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .report-body {
+            padding: 1.5rem;
+        }
+        
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .results-table th {
+            background: linear-gradient(90deg, var(--secondary-blue), var(--accent-purple));
+            color: #fff;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: 800;
+        }
+        
+        .results-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        footer {
+            background: linear-gradient(90deg, var(--christmas-green) 0%, var(--primary-red) 50%, var(--primary-gold) 100%);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-top: 4px solid var(--primary-gold);
+            margin-top: 4rem;
+        }
+        
+        footer::before {
+            content: '⛄ 🎄 Wishing You a Magical Holiday Season 🎄 ⛄';
+            display: block;
+            font-weight: 900;
+            color: #F0FFFF;
+            text-shadow: 0 0 10px rgba(34, 139, 34, 0.8);
+            padding-bottom: 1rem;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+        }
+        
+        footer p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            body { padding-top: 60px; }
+            nav { flex-direction: column; gap: 0.75rem; }
+            .nav-links { width: 100%; justify-content: center; }
+            .section { padding: 2.5rem 1rem; }
+            .section::before, .section::after { font-size: 1.5rem; }
+            .hero { padding: 2rem 1rem; }
+            .portal-container { padding: 1.5rem; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .dashboard-cards { grid-template-columns: 1fr; }
+            .profile-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title { font-size: 1.8rem; }
+            .nav-brand { font-size: 0.95rem; }
+            .portal-title { font-size: 1.5rem; }
+            .section-title { font-size: 1.5rem; }
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary-gold), var(--secondary-blue));
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles" class="particles"></div>
+    <div id="snowContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></div>
+    
+    <div style="position: absolute; top: 8%; left: 8%; font-size: 3rem; animation: float 18s infinite linear; z-index: 5;">🎄</div>
+    <div style="position: absolute; top: 12%; right: 8%; font-size: 3rem; animation: float 20s infinite linear; z-index: 5;">🎅</div>
+    <div style="position: absolute; bottom: 18%; left: 6%; font-size: 2.5rem; animation: float 22s infinite linear; z-index: 5;">❄️</div>
+    <div style="position: absolute; bottom: 25%; right: 7%; font-size: 2.5rem; animation: float 19s infinite linear; z-index: 5;">🎁</div>
+    
+    <header>
+        <nav>
+            <div class="logo-section">
+                <img src="logo.jpg" alt="Prince Learning Academy">
+                <div class="nav-brand">Prince Academy</div>
+            </div>
+            <ul class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#programs">Programs</a>
+                <a href="#contact">Contact</a>
+            </ul>
+            <button class="portal-btn" id="portalBtn">Portal</button>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">WORLD-CLASS EDUCATION EXCELLENCE</div>
+            <h1 class="hero-title">Prince Learning Academy</h1>
+            <p class="hero-subtitle">Believe. Achieve. Succeed. - Transformative Education for Future Leaders</p>
+            <div class="hero-motto">To be the King, First be a Prince.</div>
+            <div class="hero-cta">
+                <button class="cta-btn cta-primary" onclick="document.getElementById('programs').scrollIntoView({behavior: 'smooth'})">Explore Programs</button>
+                <button class="cta-btn cta-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Connect Now</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="programs" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Academic Mastery Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h3>Junior Foundation</h3>
+                    <p><strong>K.G. to Class 8</strong><br>Holistic foundation building across <strong>ICSE, CBSE & State Boards</strong> with personalised learning.</p>
+                </div>
+                <div class="program-card">
+                    <h3>ICSE Excellence</h3>
+                    <p><strong>Classes 9th & 10th</strong><br>Board-focused preparation in <strong>English, Computer Science, Physics, Chemistry, Biology</strong>.</p>
+                </div>
+                <div class="program-card">
+                    <h3>CBSE Champions</h3>
+                    <p><strong>Classes 9th & 10th</strong><br>Structured preparation for <strong>English, Mathematics, Science, SST</strong> with exam strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Contact Us</h2>
+            <div style="text-align: center; font-size: 1.1rem;">
+                <p style="margin: 1rem 0;">📱 <a href="tel:917310680106" style="color: var(--primary-gold); text-decoration: none; font-weight: 800;">+91 73106 80106</a></p>
+                <p style="margin: 1rem 0;">📧 <a href="mailto:princelearningacademygzb@gmail.com" style="color: var(--primary-gold); text-decoration: none; font-weight: 800;">princelearningacademygzb@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2025 Prince Learning Academy | Crafting Tomorrows Leaders Today</p>
+    </footer>
+    
+    <div id="studentPortalOverlay" class="portal-overlay">
+        <div class="portal-container">
+            <div class="portal-close" id="portalCloseBtn">&times;</div>
+            
+            <div id="loginScreen">
+                <h1 class="portal-title">Student Fee & Result Portal</h1>
+                <p class="portal-subtitle">Secure access for enrolled students. Use your Student ID and Access Code.</p>
+                <form class="login-form" onsubmit="loginStudent(event)">
+                    <div class="form-group">
+                        <input type="text" id="studentIdInput" class="form-input" placeholder="Student ID e.g. 2025-0009" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="studentPassInput" class="form-input" placeholder="Access Code" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                <p style="text-align: center; margin-top: 1rem; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">For help, call <strong>+91 73106 80106</strong></p>
+            </div>
+            
+            <div id="dashboardScreen" style="display: none;">
+                <h1 class="portal-title" id="dashStudentName">Welcome</h1>
+                <div class="dashboard-cards">
+                    <div class="dashboard-card" onclick="showFeePortal()">
+                        <div style="font-size: 2rem;">💳</div>
+                        <h3>Fee Ledger</h3>
+                        <p>View & pay fees</p>
+                    </div>
+                    <div class="dashboard-card" onclick="showResultsPortal()">
+                        <div style="font-size: 2rem;">📊</div>
+                        <h3>Results</h3>
+                        <p>Check scores</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="feeScreen" style="display: none;">
+                <div class="student-profile">
+                    <h2 class="student-name" id="studentNameDisplay">Student</h2>
+                    <div class="profile-grid" id="profileGrid"></div>
+                </div>
+                <h2 style="color: var(--primary-gold); text-align: center; margin: 2rem 0 1rem; font-family: 'Dancing Script', cursive; font-size: 1.5rem;">Fee Details</h2>
+                <div class="fee-table-wrapper">
+                    <table class="fee-table">
+                        <thead>
+                            <tr>
+                                <th>Month</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Select</th>
+                            </tr>
+                        </thead>
+                        <tbody id="feeTableBody"></tbody>
+                    </table>
+                </div>
+                <div class="payment-portal" id="paymentGateway">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Payment Summary</h2>
+                    <div class="total-amount" id="totalAmountDisplay">₹0</div>
+                    <div class="upi-id">UPI: 7310680106@fam</div>
+                    <button class="payment-btn" id="payBtn" onclick="initiatePayment()">Pay Now via UPI</button>
+                </div>
+            </div>
+            
+            <div id="resultsScreen" style="display: none;">
+                <div class="report-card">
+                    <div class="report-header">
+                        <div>
+                            <h2 class="report-title">Prince Learning Academy</h2>
+                            <p class="report-subtitle">Unit Test Progress Report</p>
+                        </div>
+                    </div>
+                    <div class="report-body">
+                        <div class="fee-table-wrapper">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Component</th>
+                                        <th>Marks</th>
+                                        <th>%</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resultsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const studentDatabase = {
+            '2025-0001': { pass: 'ICSE-B1', name: 'Mahi', cls: 2, brd: 'ICSE', course: 'All Subjects', fee: 500, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0002': { pass: 'ICSE-B2', name: 'Vanshika', cls: 2, brd: 'ICSE', course: 'All Subjects', fee: 800, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0003': { pass: 'ICSE-C1', name: 'Kriyansh', cls: 3, brd: 'ICSE', course: 'All Subjects', fee: 1500, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0004': { pass: 'ICSE-C2', name: 'Nipurn', cls: 3, brd: 'ICSE', course: 'All Subjects', fee: 0, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'PAID', feb: 'PAID' },
+            '2025-0005': { pass: 'ICSE-E1', name: 'Soumiya Verma', cls: 5, brd: 'ICSE', course: 'All Subjects', fee: 1000, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0006': { pass: 'ICSE-E2', name: 'Aastha', cls: 5, brd: 'ICSE', course: 'All Subjects', fee: 500, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0007': { pass: 'ICSE-F1', name: 'Devansh', cls: 6, brd: 'ICSE', course: 'All Subjects', fee: 1500, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0008': { pass: 'ICSE-F2', name: 'Mayank', cls: 6, brd: 'ICSE', course: 'All Subjects', fee: 1500, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0009': { pass: 'ICSE-H1', name: 'Hanshika', cls: 8, brd: 'ICSE', course: 'All Subjects', fee: 2200, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0010': { pass: 'ICSE-H-2', name: 'Yash', cls: 8, brd: 'ICSE', course: 'All Subjects', fee: 2200, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0011': { pass: 'ICSE-H3', name: 'Bhumika', cls: 8, brd: 'ICSE', course: 'All Subjects', fee: 3000, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0012': { pass: 'ICSE-H4', name: 'Radhika', cls: 8, brd: 'ICSE', course: 'All Subjects', fee: 3000, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0013': { pass: 'ICSE-H5', name: 'Pratham', cls: 8, brd: 'ICSE', course: 'All Subjects', fee: 2200, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0014': { pass: 'ICSE-I1', name: 'Aanvi', cls: 9, brd: 'ICSE', course: 'Computer Applications', fee: 600, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0015': { pass: 'ICSE-I2', name: 'Aaryan', cls: 9, brd: 'ICSE', course: 'English Computer Applications', fee: 1300, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0016': { pass: 'ICSE-I3', name: 'Dev Chaudhary', cls: 9, brd: 'ICSE', course: 'All Subjects', fee: 0, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'PAID', feb: 'PAID' },
+            '2025-0017': { pass: 'ICSE-I4', name: 'Vansh Khatri', cls: 9, brd: 'ICSE', course: 'English Computer Applications', fee: 1350, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0018': { pass: 'ICSE-I5', name: 'Vanshika Sharma', cls: 9, brd: 'ICSE', course: 'English Computer Applications', fee: 500, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0019': { pass: 'ICSE-I6', name: 'Vinnet Raj Singh', cls: 9, brd: 'ICSE', course: 'English Computer Applications', fee: 1350, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0020': { pass: 'ICSE-I7', name: 'Angila Rohila', cls: 9, brd: 'ICSE', course: 'All Subjects', fee: 2000, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0021': { pass: 'ICSE-I8', name: 'Avyan Pal', cls: 9, brd: 'ICSE', course: 'All Subjects', fee: 2000, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0022': { pass: 'ICSE-01', name: 'Yashi', cls: 'K.G', brd: 'ICSE', course: 'All Subjects', fee: 500, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0023': { pass: 'CBSE-01', name: 'Devansh', cls: 'K.G', brd: 'CBSE', course: 'All Subjects', fee: 0, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'PAID', feb: 'PAID' },
+            '2025-0024': { pass: 'CBSE-02', name: 'Rudransh', cls: 'K.G', brd: 'CBSE', course: 'All Subjects', fee: 0, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'PAID', feb: 'PAID' },
+            '2025-0025': { pass: 'CBSE-B2', name: 'Rachit', cls: 2, brd: 'CBSE', course: 'All Subjects', fee: 800, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0026': { pass: 'CBSE-C1', name: 'Shristi', cls: 3, brd: 'CBSE', course: 'All Subjects', fee: 0, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'PAID', feb: 'PAID' },
+            '2025-0027': { pass: 'CBSE-D1', name: 'Diksha', cls: 4, brd: 'CBSE', course: 'All Subjects', fee: 1100, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0028': { pass: 'CBSE-G1', name: 'Ruhansh', cls: 7, brd: 'CBSE', course: 'All Subjects', fee: 1500, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+            '2025-0029': { pass: 'CBSE-H1', name: 'Garvit', cls: 8, brd: 'CBSE', course: 'All Subjects', fee: 1000, bal: 0, nov: 'PAID', dec: 'PAID', jan: 'DUE', feb: 'DUE' },
+        };
+        
+        const resultDatabase = {
+            '2025-0009': { name: 'Hanshika', chem: 12, eng: 23, hist: 25 },
+            '2025-0010': { name: 'Yash', chem: 15, eng: 16, hist: 29 },
+            '2025-0014': { name: 'Aanvi', ca: 15, eng: 29 },
+            '2025-0015': { name: 'Aaryan', ca: 23, eng: 24 },
+        };
+        
+        let currentStudent = null;
+        
+        function initParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.width = p.style.height = Math.random() * 8 + 3 + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = Math.random() * 22 + 16 + 's';
+                p.style.animationDelay = Math.random() * 12 + 's';
+                particles.appendChild(p);
+            }
+            
+            const snowContainer = document.getElementById('snowContainer');
+            for (let i = 0; i < 30; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.textContent = '❄️';
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.animationDuration = (15 + Math.random() * 10) + 's';
+                snowflake.style.animationDelay = Math.random() * 5 + 's';
+                snowContainer.appendChild(snowflake);
+            }
+        }
+        
+        document.getElementById('portalBtn').addEventListener('click', () => {
+            document.getElementById('studentPortalOverlay').classList.add('active');
+            document.getElementById('studentIdInput').focus();
+        });
+        
+        document.getElementById('portalCloseBtn').addEventListener('click', () => {
+            document.getElementById('studentPortalOverlay').classList.remove('active');
+            document.getElementById('loginScreen').style.display = 'block';
+            document.getElementById('dashboardScreen').style.display = 'none';
+            document.getElementById('feeScreen').style.display = 'none';
+            document.getElementById('resultsScreen').style.display = 'none';
+            document.getElementById('studentIdInput').value = '';
+            document.getElementById('studentPassInput').value = '';
+        });
+        
+        function loginStudent(event) {
+            event.preventDefault();
+            const id = document.getElementById('studentIdInput').value.trim();
+            const pass = document.getElementById('studentPassInput').value.trim();
+            
+            if (!studentDatabase[id]) {
+                alert('❌ Student ID not found!');
+                return;
+            }
+            
+            if (studentDatabase[id].pass !== pass) {
+                alert('❌ Invalid Access Code!');
+                return;
+            }
+            
+            currentStudent = { id, ...studentDatabase[id] };
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('dashboardScreen').style.display = 'block';
+            document.getElementById('dashStudentName').textContent = `Welcome, ${currentStudent.name}!`;
+        }
+        
+        function showFeePortal() {
+            document.getElementById('dashboardScreen').style.display = 'none';
+            document.getElementById('feeScreen').style.display = 'block';
+            
+            document.getElementById('studentNameDisplay').textContent = currentStudent.name;
+            const profileGrid = document.getElementById('profileGrid');
+            profileGrid.innerHTML = `<div class="profile-item"><strong>ID:</strong> ${currentStudent.id}</div><div class="profile-item"><strong>Class:</strong> ${currentStudent.cls}</div><div class="profile-item"><strong>Board:</strong> ${currentStudent.brd}</div>`;
+            
+            const months = ['Nov', 'Dec', 'Jan', 'Feb'];
+            let feeHTML = '';
+            let totalDue = 0;
+            
+            months.forEach(month => {
+                const status = currentStudent[month.toLowerCase()];
+                const amount = currentStudent.fee;
+                const isPaid = status === 'PAID';
+                if (!isPaid) totalDue += amount;
+                
+                feeHTML += `<tr><td>${month}</td><td>₹${amount}</td><td><span class="status-badge ${isPaid ? 'status-paid' : 'status-due'}">${status}</span></td><td><input type="checkbox" data-month="${month}" data-amount="${amount}" ${isPaid ? 'disabled' : ''} onchange="updatePaymentTotal()"></td></tr>`;
+            });
+            
+            document.getElementById('feeTableBody').innerHTML = feeHTML;
+            document.getElementById('paymentGateway').style.display = totalDue > 0 ? 'block' : 'none';
+        }
+        
+        function updatePaymentTotal() {
+            let total = 0;
+            document.querySelectorAll('input[data-amount]:checked').forEach(checkbox => {
+                total += parseInt(checkbox.dataset.amount);
+            });
+            document.getElementById('totalAmountDisplay').textContent = '₹' + total;
+        }
+        
+        function initiatePayment() {
+            const total = document.getElementById('totalAmountDisplay').textContent.replace('₹', '');
+            if (total == 0) { alert('Select fees to pay'); return; }
+            const upiLink = `upi://pay?pa=7310680106@fam&pn=PrinceAcademy&am=${total}&tn=Fees`;
+            window.location.href = upiLink;
+        }
+        
+        function showResultsPortal() {
+            document.getElementById('dashboardScreen').style.display = 'none';
+            document.getElementById('resultsScreen').style.display = 'block';
+            
+            const results = resultDatabase[currentStudent.id];
+            if (!results) {
+                document.getElementById('resultsTableBody').innerHTML = '<tr><td colspan="4" style="text-align: center; padding: 2rem;">No results available</td></tr>';
+                return;
+            }
+            
+            let html = '';
+            const subjects = Object.keys(results).filter(k => k !== 'name');
+            subjects.forEach(subject => {
+                const marks = results[subject];
+                const maxMarks = 50;
+                const percentage = ((marks / maxMarks) * 100).toFixed(1);
+                html += `<tr><td>${subject.toUpperCase()}</td><td>Unit Test</td><td>${marks}/${maxMarks}</td><td>${percentage}%</td></tr>`;
+            });
+            document.getElementById('resultsTableBody').innerHTML = html;
+        }
+        
+        window.addEventListener('load', initParticles);
+    </script>
+</body>
+</html>
